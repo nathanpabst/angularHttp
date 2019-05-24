@@ -29,12 +29,23 @@ export class AppComponent {
     });
   }
 
-  onSave() {
+  onSaveServers() {
     this.serverService.storeServers(this.servers)
     .subscribe(
       (response) => console.log(response),
       (error) => console.log(error)
     );
+  }
+
+  onGetServers() {
+    this.serverService.getServers()
+    .subscribe(
+      (response: Response) => {
+        const data = response.json();
+        console.log('data from getServers call: ', data);
+      },
+      (error) => console.log(error)
+      );
   }
 
   private generateId() {
