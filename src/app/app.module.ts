@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { ServerService } from './servers.service';
 
 @NgModule({
   declarations: [
@@ -12,9 +13,10 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     FormsModule,
+// tslint:disable-next-line: deprecation
     HttpModule
   ],
-  providers: [],
+  providers: [ServerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
